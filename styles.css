@@ -7,9 +7,9 @@
 
 /* Header Styles */
 .header {
-  background-color: #333;
+  background-color: #222;
   padding: 20px 0;
-  color: white;
+  color: #ffffff;
 }
 
 .navbar .container {
@@ -20,6 +20,7 @@
 
 .logo {
   font-size: 1.5rem;
+  color: #00bcd4;
 }
 
 .nav-menu {
@@ -32,23 +33,28 @@
 }
 
 .nav-menu a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #00bcd4;
 }
 
 .hamburger-menu {
   display: none;
   font-size: 2rem;
-  color: white;
+  color: #ffffff;
   background: none;
   border: none;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-image.jpg') no-repeat center center/cover;
-  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-image.jpg') no-repeat center center/cover;
+  color: #ffffff;
   padding: 150px 0;
   text-align: center;
   position: relative;
@@ -61,7 +67,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
@@ -74,6 +80,7 @@
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: #00bcd4;
 }
 
 .hero p {
@@ -86,8 +93,8 @@
 }
 
 .btn {
-  background-color: #ff6f61;
-  color: white;
+  background-color: #00bcd4;
+  color: #ffffff;
   padding: 15px 30px;
   text-decoration: none;
   border-radius: 5px;
@@ -96,19 +103,20 @@
 }
 
 .btn:hover {
-  background-color: #ff3b2f;
+  background-color: #008c9e;
 }
 
 /* About Section Preview */
 .about-preview {
   padding: 60px 0;
-  background-color: #f0f0f0;
+  background-color: #e0e0e0;
   text-align: center;
 }
 
 .about-preview h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #222;
 }
 
 .about-preview p {
@@ -124,26 +132,33 @@
 .services {
   padding: 60px 0;
   text-align: center;
+  background-color: #f8f8f8;
 }
 
 .service-item {
   margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff;
 }
 
 .services h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #222;
 }
 
 .service-item h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  color: #00bcd4;
 }
 
 /* Testimonial Section */
 .testimonial {
   padding: 60px 0;
-  background-color: #fff;
+  background-color: #ffffff;
   text-align: center;
 }
 
@@ -159,14 +174,14 @@
 
 .testimonial cite {
   font-size: 1rem;
-  color: #333;
+  color: #222;
 }
 
 /* Footer */
 .footer {
   padding: 20px 0;
-  background-color: #333;
-  color: white;
+  background-color: #222;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -175,7 +190,7 @@
   .nav-menu {
       display: none;
       flex-direction: column;
-      background-color: #333;
+      background-color: #222;
       position: absolute;
       top: 100%;
       left: 0;
