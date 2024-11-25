@@ -54,36 +54,26 @@ header nav ul li a:hover {
     color: #fff;
 }
 
-#about {
+#about, #services, #quote, #contact {
     background-color: #fff;
     padding: 2rem;
     text-align: center;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+form label {
+    display: block;
+    margin: 1rem 0 0.5rem;
 }
 
-.product-card {
+form input, form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
     border: 1px solid #ddd;
-    padding: 1rem;
-    text-align: center;
-    background-color: #fff;
-    transition: box-shadow 0.3s;
+    border-radius: 4px;
 }
 
-.product-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.product-card h3 {
-    color: #007bff;
-}
-
-.product-card button {
+form button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -92,7 +82,7 @@ header nav ul li a:hover {
     transition: background-color 0.3s;
 }
 
-.product-card button:hover {
+form button:hover {
     background-color: #0056b3;
 }
 
