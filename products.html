@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - MyWebsite</title>
+    <title>Our Products - MyWebsite</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -17,9 +17,15 @@
         .nav-menu a {
             color: white;
         }
-        .about {
-            background-color: #e6e6fa;
+        .products {
+            background-color: #fafad2;
             padding: 20px;
+        }
+        .product-item {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
         .footer {
             background-color: #333;
@@ -47,12 +53,24 @@
         </nav>
     </header>
 
-    <section class="about" id="about">
+    <section class="products" id="products">
         <div class="container">
-            <h2>About Us</h2>
-            <p>Welcome to MyWebsite! We are dedicated to providing the best service to our customers. Our team is passionate, experienced, and ready to help you achieve your goals.</p>
-            <p>Our mission is to deliver quality, reliability, and excellence in everything we do. We believe in strong customer relationships and aim to exceed your expectations.</p>
-            <img src="images/about-us.jpg" alt="About Us" style="width: 100%; max-width: 600px; margin-top: 20px;">
+            <h2>Our Products</h2>
+            <div class="product-item">
+                <h3>Product One</h3>
+                <img src="images/product1.jpg" alt="Product One" style="width: 100%; max-width: 300px;">
+                <p>Description of Product One. Highlight its features and benefits to customers.</p>
+            </div>
+            <div class="product-item">
+                <h3>Product Two</h3>
+                <img src="images/product2.jpg" alt="Product Two" style="width: 100%; max-width: 300px;">
+                <p>Description of Product Two. Highlight its features and benefits to customers.</p>
+            </div>
+            <div class="product-item">
+                <h3>Product Three</h3>
+                <img src="images/product3.jpg" alt="Product Three" style="width: 100%; max-width: 300px;">
+                <p>Description of Product Three. Highlight its features and benefits to customers.</p>
+            </div>
         </div>
     </section>
 
