@@ -1,43 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solar power</title>
+    <title>Professional Website Template</title>
     <link rel="stylesheet" href="main.css">
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <h1>Solar Power</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">MyWebsite</h1>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-            </nav>
-        </div>
+                <button class="hamburger-menu" id="menu-toggle">
+                    &#9776;
+                </button>
+            </div>
+        </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
-            <h2>Welcome to Product Store</h2>
-            <p>Providing quality products at competitive prices.</p>
-            <button onclick="scrollToProducts()">Explore Products</button>
+            <h2>Welcome to My Professional Website</h2>
+            <p>Your business tagline goes here. Make it catchy and inviting!</p>
+            <a href="#about" class="btn">Learn More</a>
         </div>
     </section>
 
-    <footer>
+    <section class="about" id="about">
         <div class="container">
-            <p>&copy; 2024 Product Store. All rights reserved.</p>
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet nulla sed mauris facilisis, vel eleifend magna tincidunt.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-item">
+                <h3>Service One</h3>
+                <p>Description of the service goes here. Highlight its value to customers.</p>
+            </div>
+            <div class="service-item">
+                <h3>Service Two</h3>
+                <p>Description of the service goes here. Highlight its value to customers.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MyWebsite. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>

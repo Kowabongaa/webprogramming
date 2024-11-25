@@ -1,18 +1,8 @@
-function scrollToProducts() {
-    document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-function addToCart(productName) {
-    alert(productName + ' has been added to your cart!');
-}
-
-window.addEventListener('scroll', function() {
-    const heroSection = document.querySelector('.hero');
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > heroSection.offsetTop && scrollPosition < heroSection.offsetTop + heroSection.clientHeight) {
-        heroSection.style.opacity = '0.9';
-    } else {
-        heroSection.style.opacity = '1';
-    }
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+    });
 });
