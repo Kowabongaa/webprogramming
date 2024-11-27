@@ -1,3 +1,5 @@
+/* Combined Styles for MyWebsite */
+
 /* Reset some default browser styles */
 * {
   margin: 0;
@@ -52,56 +54,6 @@
   border: none;
 }
 
-/* Services Section */
-.services {
-  padding: 60px 0;
-  text-align: center;
-  background-color: #fff;
-  color: #000;
-}
-
-.service-item {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.service-item h3 {
-  color: #000;
-  margin-bottom: 10px;
-}
-
-/* Footer */
-.footer {
-  padding: 20px 0;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-  .nav-menu {
-      display: none;
-      flex-direction: column;
-      background-color: #000;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-  }
-
-  .nav-menu.open {
-      display: flex;
-  }
-
-  .hamburger-menu {
-      display: block;
-  }
-}
-
 /* About Page Styles */
 .about-container {
   display: flex;
@@ -150,17 +102,66 @@
   height: 40px;
 }
 
-/* products_styles.css */
-.add-to-bag {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+/* Products Page Styles */
+.products .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
 }
 
-.add-to-bag:hover {
-  background-color: #444;
+.product-item {
+  flex: 1 1 calc(33% - 40px);
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .product-item {
+      flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-item {
+      flex: 1 1 100%;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  padding: 20px 0;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+/* Media Queries for Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #000;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+  }
+
+  .nav-menu.open {
+      display: flex;
+  }
+
+  .hamburger-menu {
+      display: block;
+  }
 }
