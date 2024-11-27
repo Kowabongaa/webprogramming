@@ -169,13 +169,6 @@
   border-radius: 8px;
 }
 
-.about-stats {
-  display: flex;
-  justify-content: space-around;
-  padding: 40px 20px;
-  background-color: #f8f8f8;
-  text-align: center;
-}
 
 .stat-item {
   flex: 1;
@@ -282,8 +275,4 @@
       flex-direction: column;
   }
 
-  .about-stats {
-      flex-direction: column;
-      gap: 20px;
-  }
 }
