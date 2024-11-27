@@ -149,3 +149,18 @@
   width: 40px;
   height: 40px;
 }
+
+/* products_styles.css */
+.add-to-bag {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-bag:hover {
+  background-color: #444;
+}
