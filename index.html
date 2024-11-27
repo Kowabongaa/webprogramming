@@ -25,9 +25,9 @@
         </nav>
     </header>
 
-    
+    <section class="hero" id="home">
+        <div class="hero-content">
             <img src="images/hero-main.jpg" alt="Main Hero Image" style="width: 100%; max-width: 1200px; margin-bottom: 20px;">
-
             <h2>Welcome to My Professional Website</h2>
             <p>Your business tagline goes here. Make it catchy and inviting, highlighting your uniqueness and value!</p>
             <a href="about.html" class="btn">Learn More</a>
@@ -69,9 +69,9 @@
         </div>
     </section>
 
-    
+    <section class="services" id="services">
+        <div class="container">
             <img src="images/services-overview.jpg" alt="Services Overview" style="width: 100%; max-width: 800px; margin-bottom: 20px;">
-
             <h2>Our Services</h2>
             <div class="service-item">
                 <h3>Consulting</h3>
@@ -107,3 +107,13 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+    });
+});
