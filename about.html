@@ -1,23 +1,23 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - MyWebsite</title>
-    <link rel="stylesheet" href="styles.css">
-    
+    <link rel="stylesheet" href="styles-black-and-white.css">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <div class="container">
-                <h1 class="logo">Solar Power</h1>
+                <h1 class="logo">MyWebsite</h1>
                 <ul class="nav-menu">
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="products.html">Products</a></li>
                 </ul>
                 <button class="hamburger-menu" id="menu-toggle">
                     &#9776;
@@ -26,12 +26,39 @@
         </nav>
     </header>
 
-    <section class="about" id="about">
+    <section class="about-hero" style="background: url('images/about-background.jpg') no-repeat center center/cover; padding: 100px 0; color: #fff; text-align: center;">
         <div class="container">
-            <h2>About Us</h2>
-            <p>Welcome to MyWebsite! We are dedicated to providing the best service to our customers. Our team is passionate, experienced, and ready to help you achieve your goals.</p>
-            <p>Our mission is to deliver quality, reliability, and excellence in everything we do. We believe in strong customer relationships and aim to exceed your expectations.</p>
-            <img src="images/about-us.jpg" alt="About Us" style="width: 100%; max-width: 600px; margin-top: 20px;">
+            <h2>About</h2>
+            <p>Esse dolorumn voluptatem ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>Dolor iure expedita id fuga asperiores qui sunt consequatur minima. Quidem voluptas deleniti. Sit quia molestiae quia quas qui magnam itaque veritatis dolores. Corrupti totam ut eius incidunt reiciendis veritatis asperiores placeat.</p>
+                <ul class="about-list">
+                    <li>
+                        <div class="about-icon"><img src="images/icon1.png" alt="Icon"></div>
+                        <strong>Ullamco laboris nisi ut aliquip consequat</strong>
+                        <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
+                    </li>
+                    <li>
+                        <div class="about-icon"><img src="images/icon2.png" alt="Icon"></div>
+                        <strong>Magnam soluta odio exercitationem reprehenderi</strong>
+                        <p>Quo totam dolorom at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
+                    </li>
+                    <li>
+                        <div class="about-icon"><img src="images/icon3.png" alt="Icon"></div>
+                        <strong>Voluptatem et qui exercitationem</strong>
+                        <p>Et velit et eos maiores est tempora et quos dolorem autem tempora incidunt maxime veniam</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="images/about-team.jpg" alt="Our Team">
+            </div>
         </div>
     </section>
 
