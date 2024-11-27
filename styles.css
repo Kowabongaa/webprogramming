@@ -6,11 +6,16 @@
   font-family: Arial, sans-serif;
 }
 
+/* Updated Theme Colors */
+body {
+  background: linear-gradient(to bottom, #fff4b1, #ffd700);
+  color: #333;
+}
+
 /* Header Styles */
 .header {
-  background-color: #222;
-  padding: 20px 0;
-  color: #ffffff;
+  background: linear-gradient(to right, #fff4b1, #ffd700);
+  color: #333;
 }
 
 .navbar .container {
@@ -21,7 +26,7 @@
 
 .logo {
   font-size: 1.5rem;
-  color: #00bcd4;
+  color: #333;
 }
 
 .nav-menu {
@@ -34,28 +39,28 @@
 }
 
 .nav-menu a {
-  color: #ffffff;
+  color: #333;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
-  color: #00bcd4;
+  color: #ffd700;
 }
 
 .hamburger-menu {
   display: none;
   font-size: 2rem;
-  color: #ffffff;
+  color: #333;
   background: none;
   border: none;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-image.jpg') no-repeat center center/cover;
-  color: #ffffff;
+  background: linear-gradient(to bottom, #fff4b1, #ffd700), url('hero-image.jpg') no-repeat center center/cover;
+  color: #333;
   padding: 150px 0;
   text-align: center;
   position: relative;
@@ -81,7 +86,7 @@
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #00bcd4;
+  color: #ffd700;
 }
 
 .hero p {
@@ -94,8 +99,8 @@
 }
 
 .btn {
-  background-color: #00bcd4;
-  color: #ffffff;
+  background-color: #ffd700;
+  color: #333;
   padding: 15px 30px;
   text-decoration: none;
   border-radius: 5px;
@@ -104,13 +109,13 @@
 }
 
 .btn:hover {
-  background-color: #008c9e;
+  background-color: #ffea00;
 }
 
 /* About Section Preview */
 .about-preview {
   padding: 60px 0;
-  background-color: #e0e0e0;
+  background-color: #fff9e6;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -138,7 +143,7 @@
 .about-content h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #222;
+  color: #333;
 }
 
 .about-content p {
@@ -170,24 +175,11 @@
   border-radius: 8px;
 }
 
-
-
-.stat-item h3 {
-  font-size: 2.5rem;
-  color: #00bcd4;
-  margin-bottom: 10px;
-}
-
-.stat-item p {
-  font-size: 1rem;
-  color: #333;
-}
-
 /* Services Section */
 .services {
   padding: 60px 0;
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: #fff7d1;
 }
 
 .service-item {
@@ -201,13 +193,13 @@
 .services h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #222;
+  color: #333;
 }
 
 .service-item h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #00bcd4;
+  color: #ffd700;
 }
 
 /* Testimonial Section */
@@ -229,14 +221,14 @@
 
 .testimonial cite {
   font-size: 1rem;
-  color: #222;
+  color: #333;
 }
 
 /* Footer */
 .footer {
   padding: 20px 0;
-  background-color: #222;
-  color: #ffffff;
+  background: linear-gradient(to right, #ffd700, #fff4b1);
+  color: #333;
   text-align: center;
 }
 
@@ -245,7 +237,7 @@
   .nav-menu {
       display: none;
       flex-direction: column;
-      background-color: #222;
+      background-color: #ffd700;
       position: absolute;
       top: 100%;
       left: 0;
@@ -270,10 +262,5 @@
 
   .about-container {
       flex-direction: column;
-  }
-
-  .about-stats {
-      flex-direction: column;
-      gap: 20px;
   }
 }
