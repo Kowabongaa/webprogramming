@@ -20,6 +20,8 @@
 }
 
 .navbar .container {
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,6 +62,7 @@
 
 /* About Page Styles */
 .about-container {
+  padding: 80px 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -71,6 +74,7 @@
 }
 
 .about-content {
+  margin-bottom: 40px;
   flex: 1;
   max-width: 600px;
 }
@@ -81,6 +85,7 @@
 }
 
 .about-image img {
+  margin-top: 20px;
   width: 100%;
   max-width: 500px;
   border-radius: 8px;
@@ -109,6 +114,7 @@
 
 /* Products Page Styles */
 .products .container {
+  padding: 60px 20px 80px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -117,6 +123,8 @@
 }
 
 .product-item {
+  margin-top: 20px;
+  margin-bottom: 40px;
   flex: 1 1 calc(33% - 40px);
   box-sizing: border-box;
   padding: 20px;
@@ -134,6 +142,7 @@
 
 /* Footer Styles */
 .footer {
+  padding: 60px 20px;
   padding: 40px 20px;
   background-color: #000;
   color: #fff;
