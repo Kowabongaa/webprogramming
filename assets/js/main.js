@@ -143,44 +143,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-const isLoggedIn = localStorage.getItem('userLoggedIn'); 
-const loginLink = document.getElementById('login-link');
 
-if (isLoggedIn) {
-    loginLink.textContent = 'Logout';
-    loginLink.href = 'logout.html';
-} else {
-    loginLink.textContent = 'Login';
-    loginLink.href = 'login.html';
-}
-
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-
-function addToCart(id, name, price) {
-    const productIndex = cart.findIndex(product => product.id === id);
-
-    if (productIndex > -1) {
-        cart[productIndex].quantity += 1;
-    } else {
-        const product = {
-            id: id,
-            name: name,
-            price: price,
-            quantity: 1
-        };
-        cart.push(product);
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    updateCartCount();
-}
-
-function updateCartCount() {
-    const shoppingBag = document.getElementById('shopping-bag');
-    const totalItems = cart.reduce((sum, product) => sum + product.quantity, 0);
-    shoppingBag.innerHTML = `🛒 Cart (${totalItems})`;
-}
-
-updateCartCount();
