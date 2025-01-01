@@ -1643,6 +1643,26 @@ section,
   margin-right: 8px;
   color: var(--accent-color);
 }
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.services-list-container {
+  grid-column: 1;
+}
+
+.service-descriptions-container {
+  grid-column: 2;
+}
+.service-description {
+  display: none;
+}
+
+.service-description.visible-description {
+  display: block;
+}
 
 /*--------------------------------------------------------------
 # Alt Pricing Section
