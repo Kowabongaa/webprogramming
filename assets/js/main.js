@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
-  /**
-   * Preloader
-   */
+  // Preloader
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
@@ -11,9 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /**
-   * Sticky header on scroll
-   */
+  // Sticky Header
   const selectHeader = document.querySelector('#header');
   if (selectHeader) {
     const stickyHeader = () => {
@@ -22,9 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('scroll', stickyHeader);
   }
 
-  /**
-   * Scroll top button
-   */
+  // Scroll-to-Top Button
   const scrollTop = document.querySelector('.scroll-top');
   if (scrollTop) {
     const toggleScrollTop = () => {
@@ -41,66 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /**
-   * Mobile nav toggle
-   */
+  // Mobile Nav Toggle
   const mobileNavShow = document.querySelector('.mobile-nav-show');
   const mobileNavHide = document.querySelector('.mobile-nav-hide');
-
   const mobileNavToggle = () => {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
+    const body = document.querySelector('body');
+    body.classList.toggle('mobile-nav-active');
     if (mobileNavShow && mobileNavHide) {
       mobileNavShow.classList.toggle('d-none');
       mobileNavHide.classList.toggle('d-none');
     }
   };
 
-  document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
-    el.addEventListener('click', (event) => {
-      event.preventDefault();
-      mobileNavToggle();
-    });
-  });
-
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navbar a').forEach(navbarlink => {
-    if (!navbarlink.hash) return;
-
-    let section = document.querySelector(navbarlink.hash);
-    if (!section) return;
-
-    navbarlink.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToggle();
-      }
-    });
-  });
-
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
-  navDropdowns.forEach(el => {
-    el.addEventListener('click', (event) => {
-      if (document.querySelector('.mobile-nav-active')) {
+  if (mobileNavShow && mobileNavHide) {
+    document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
+      el.addEventListener('click', (event) => {
         event.preventDefault();
-        el.classList.toggle('active');
-        el.nextElementSibling.classList.toggle('dropdown-active');
-
-        const dropDownIndicator = el.querySelector('.dropdown-indicator');
-        if (dropDownIndicator) {
-          dropDownIndicator.classList.toggle('bi-chevron-up');
-          dropDownIndicator.classList.toggle('bi-chevron-down');
-        }
-      }
+        mobileNavToggle();
+      });
     });
-  });
+  }
 
-  /**
-   * Dynamic cart update
-   */
+  // Cart Update
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const shoppingBag = document.querySelector('#shopping-bag');
   const updateCartCount = () => {
@@ -109,64 +65,15 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   updateCartCount();
 
-  /**
-   * Login button dynamic state
-   */
+  // Login State
   const loginLink = document.querySelector('#login-link');
-  const isLoggedIn = localStorage.getItem('userLoggedIn'); // Simulated state
+  const isLoggedIn = localStorage.getItem('userLoggedIn');
   if (loginLink) {
-    if (isLoggedIn) {
-      loginLink.textContent = 'Logout';
-      loginLink.href = 'logout.html';
-    } else {
-      loginLink.textContent = 'Login';
-      loginLink.href = 'login.html';
-    }
+    loginLink.textContent = isLoggedIn ? 'Logout' : 'Login';
+    loginLink.href = isLoggedIn ? 'logout.html' : 'login.html';
   }
 
-  /**
-   * Initiate PureCounter
-   */
-  if (typeof PureCounter !== 'undefined') {
-    new PureCounter();
-  }
-
-  /**
-   * Initiate GLightbox
-   */
-  if (typeof GLightbox !== 'undefined') {
-    const glightbox = GLightbox({
-      selector: '.glightbox'
-    });
-  }
-
-  /**
-   * Init Swiper slider with 1 slide at once in desktop view
-   */
-  if (typeof Swiper !== 'undefined') {
-    new Swiper('.slides-1', {
-      speed: 600,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      slidesPerView: 'auto',
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
-    });
-  }
-
-  /**
-   * Animation on scroll function and init
-   */
+  // AOS Initialization
   const aosInit = () => {
     if (typeof AOS !== 'undefined') {
       AOS.init({
