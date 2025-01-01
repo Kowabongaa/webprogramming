@@ -7,8 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     signupForm.addEventListener('submit', (event) => {
       event.preventDefault();
   
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+  
+      if (!username || !password) {
+        signupError.textContent = 'Username and password are required.';
+        signupSuccess.textContent = '';
+        return;
+      }
   
       // Retrieve existing users from localStorage
       const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -29,8 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
       signupSuccess.textContent = 'Sign-up successful! Redirecting to login page...';
       signupError.textContent = '';
       setTimeout(() => {
-        window.location.href = 'login.html'; // Change this to your login page URL
+        window.location.href = 'login.html'; // Ensure this URL points to your login page
       }, 2000);
+  
+      // Debugging Logs
+      console.log('User signed up:', { username, password });
+      console.log('All users:', users);
     });
   });
   
