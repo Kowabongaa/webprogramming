@@ -24,3 +24,6 @@ signIn.addEventListener('click', ()=>{
     loginIn.classList.toggle('block')
     loginUp.classList.toggle('none')
 })
+setTimeout(() => {
+    window.location.href = 'index.html'; // Ensure this URL points to your home page
+  }, 1500);
