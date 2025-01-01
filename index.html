@@ -47,7 +47,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="cart.html" id="shopping-bag">🛒(0)</a></li>
-          <li><a href="index.php" id="login-link" class="login-button">Login</a></li>
+          <li><a href="#login-section" class="login-button">Login</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -58,24 +58,75 @@
 
   <main class="main">
 
-    <!-- Hero Section -->
+        <!-- Login and Registration Section -->
+        <section id="login-section" class="login-section">
+          <div class="container login-container">
+            <div class="login-content">
+              <div class="login-img">
+                <img src="assets/img/img-login.svg" alt="Login Illustration">
+              </div>
+    
+              <div class="login-forms">
+                <!-- Sign In Form -->
+                <form action="login.php" method="POST" class="login__registre" id="login-in">
+                  <h1 class="login__title">Sign In</h1>
+                  <div class="login__box">
+                    <i class="bx bx-user login__icon"></i>
+                    <input type="text" name="username" placeholder="Username" class="login__input" required>
+                  </div>
+                  <div class="login__box">
+                    <i class="bx bx-lock-alt login__icon"></i>
+                    <input type="password" name="password" placeholder="Password" class="login__input" required>
+                  </div>
+                  <a href="#" class="login__forgot">Forgot password?</a>
+                  <button type="submit" class="login__button">Sign In</button>
+                  <div>
+                    <span class="login__account">Don't have an Account?</span>
+                    <span class="login__signin" id="sign-up">Sign Up</span>
+                  </div>
+                </form>
+    
+                <!-- Sign Up Form -->
+                <form action="register.php" method="POST" class="login__create none" id="login-up">
+                  <h1 class="login__title">Create Account</h1>
+                  <div class="login__box">
+                    <i class="bx bx-user login__icon"></i>
+                    <input type="text" name="username" placeholder="Username" class="login__input" required>
+                  </div>
+                  <div class="login__box">
+                    <i class="bx bx-at login__icon"></i>
+                    <input type="email" name="email" placeholder="Email" class="login__input" required>
+                  </div>
+                  <div class="login__box">
+                    <i class="bx bx-lock-alt login__icon"></i>
+                    <input type="password" name="password" placeholder="Password" class="login__input" required>
+                  </div>
+                  <button type="submit" class="login__button">Sign Up</button>
+                  <div>
+                    <span class="login__account">Already have an Account?</span>
+                    <span class="login__signup" id="sign-in">Sign In</span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
     <section id="hero" class="hero section dark-background">
       <div class="container text-center" data-aos="fade-in">
         <h1>Welcome to SolarNova</h1>
         <p>Empowering the world with clean, sustainable energy solutions for a brighter tomorrow.</p>
         <a href="#services" class="btn-get-started">Discover Our Products</a>
       </div>
-    </section><!-- /Hero Section -->
+    </section>
 
-    <!-- Features Section -->
     <section id="features" class="features section">
       <div class="container">
 
-        <!-- Section Title -->
         <div class="section-title" data-aos="fade-up">
           <h2>Why Choose Us</h2>
           <p>Discover the SolarNova difference.</p>
-        </div><!-- End Section Title -->
+        </div>
 
         <div class="row gy-4">
 
