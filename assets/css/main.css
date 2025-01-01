@@ -1660,3 +1660,17 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+.service-description .add-to-cart {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.service-description .add-to-cart:hover {
+  background-color: #0056b3;
+}
