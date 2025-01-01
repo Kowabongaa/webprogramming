@@ -1,67 +1,94 @@
 <?php
-	session_start();
-	require 'dbconfig/config.php';
+include 'config/init.php';
 ?>
-<!DOCTYPE html>
-<html>
+
+<html lang="pt-BR">
+    
 <head>
-	<title>Seven Inc.</title>
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>LoginPage</title>
 </head>
-<body bgcolor="#191919">
 
-	<h1 style="font-size:56px; color:#f7b32d">&nbsp;SE7EN<img src="logo.png" alt="Logo" style="width:100px; height:115px" align="left"></h1>
-	<hr style="border-width:3px; border-color:#f7b32d">
-
-	<h5 align="right" style="color:#f7b32d">
-		<a href="index.php" style="text-decoration:none; color:#f7b32d"> HOME </a> &nbsp; | &nbsp; 
-		<a href="register.php" style="text-decoration:none; color:#f7b32d"> REGISTRATION </a> &nbsp; | &nbsp; 
-		<a href="index.php" style="text-decoration:none; color:#f7b32d"> LOGIN </a> &nbsp;
-	</h5>
-	<div id="main-wrapper">
-		<center>
-			<h2>User Login</h2>
-			<img src="imgs/avatar.png" class="avatar"/>
-		</center>
-	
-		<form class="myform" action="index.php" method="post">
-			<label><b>Username:</b></label><br>
-			<input name="username" type="text" class="inputvalues" placeholder="Type your username" required/><br>
-			<label><b>Password:</b></label><br>
-			<input name="password" type="password" class="inputvalues" placeholder="Type your password" required/><br>
-			<input name="login" type="submit" id="login_btn" value="Login"/><br>
-			<a href="register.php"><input type="button" id="register_btn" value="Register"/></a>
-		</form>
-		<?php
-		if(isset($_POST['login']))
-		{
-			$username=$_POST['username'];
-			$password=$_POST['password'];
-			
-			$query="select * from userinformation WHERE username='$username' AND password='$password'";
-			
-			$query_run = mysqli_query($con,$query);
-			if(mysqli_num_rows($query_run)>0)
-			{
-				$row = mysqli_fetch_assoc($query_run);
-				// valid
-				$_SESSION['username']= $row['username'];
-				$_SESSION['imglink']= $row['imglink'];
-				header('location:homepage.php');
-			}
-			else
-			{
-				// invalid
-				echo '<script type="text/javascript"> alert("Invalid credentials") </script>';
-			}
-			
-		}
-		
-		
-		?>
-		
-	</div>
-	<footer align="right" style="font-size:10px; color:#191919">&copy; 2018 | Jubayer Alam | 1420268042 | NSU</footer>
-		
+<body>
+  <div class="container" id="container">
+    <!-- Sing Up -->
+    <div class="form-container sign-up">
+      <form method="POST" action="controller/singUp.php">
+        <h2>Create Account</h2>
+        <span>Use Your Email To Registration</span>
+        <input type="text" name="username" placeholder="UserName">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="PassWord">
+        <button type="submit" name="singup">Sign Up</button>
+      </form>
+    </div>
+    <!-- Sing In -->
+    <div class="form-container sign-in">
+      <form method="POST" action="controller/singIn.php">
+        <h2>Sign In</h2>
+        <div class="social-icons">
+          <a href="<?= Instagram ?>" class="icons"><i class="fa-brands fa-instagram"></i></a>
+          <a href="<?= Telegram ?>" class="icons"><i class="fa-brands fa-telegram"></i></a>
+          <a href="<?= GitHub ?>" class="icons"><i class="fa-brands fa-github"></i></a>
+          <a href="<?= LinkedIn ?>" class="icons"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <span>Use Your Email/PassWord</span>
+        <input type="text" name="key" placeholder="UserName / Email">
+        <input type="password" name="password" placeholder="PassWord">
+        <a href="forgetPassword.php">Forget your Password?</a>
+        <div style="display: flex;">
+          <button type="submit" name="singin" style="margin-inline: 5px;">Sign In</button>
+        </div>
+        <?php
+        if (isset($_GET['Error']) && $_GET['Error'] == 'NotLogged') {
+          echo "<p class='alert alert-danger'>Incorrect Username/Email Or Password</p>";
+        }
+        if (isset($_GET['Error']) && $_GET['Error'] == 'NotCreated-1') {
+          echo "<p class='alert alert-danger'>Please Complete All Fields</p>";
+        }
+        if (isset($_GET['Error']) && $_GET['Error'] == 'NotCreated-2') {
+          echo "<p class='alert alert-danger'>The Desired Email Is Duplicate</p>";
+        }
+        if (isset($_GET['Error']) && $_GET['Error'] == 'NotCreated-3') {
+          echo "<p class='alert alert-danger'>The Desired Username Is Duplicate</p>";
+        }
+        if (isset($_GET['Error']) && $_GET['Error'] == 'NotCreated-4') {
+          echo "<p class='alert alert-danger'>The Desired Password Is Not Secure</p>";
+        }
+        if (isset($_GET['Message']) && $_GET['Message'] == 'Logged') {
+          echo "<p class='alert alert-success'>You Have SuccessFully Logged In</p>";
+        }
+        if (isset($_GET['Message']) && $_GET['Message'] == 'Created') {
+          echo "<p class='alert alert-success'>Account Created SuccessFully</p>";
+        }
+        if (isset($_GET['Message']) && $_GET['Message'] == 'SendSucceeded') {
+          echo "<p class='alert alert-success'>New password sent to email</p>";
+        }
+        ?>
+      </form>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>Welcome Back!</h1>
+          <p>Enter your Personal details to use all of site features</p>
+          <button class="hidden" id="login">Sign In</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Hello, Friend!</h1>
+          <p>Register with your Personal details to use all of site features</p>
+          <button class="hidden" id="register">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+<script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </html>
