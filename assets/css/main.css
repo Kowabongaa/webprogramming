@@ -1582,9 +1582,8 @@ section,
 # Service Details Section
 --------------------------------------------------------------*/
 .service-details .services-list {
-  background-color: var(--surface-color);
   padding: 10px 30px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border: 1px solid #d3dff3;
   margin-bottom: 20px;
 }
 
@@ -1592,34 +1591,37 @@ section,
   display: block;
   line-height: 1;
   padding: 8px 0 8px 15px;
-  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  border-left: 3px solid #c2cbdf;
   margin: 20px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: var(--color-secondary);
   transition: 0.3s;
 }
 
 .service-details .services-list a.active {
-  color: var(--heading-color);
   font-weight: 700;
-  border-color: var(--accent-color);
+  border-color: var(--color-primary);
 }
 
 .service-details .services-list a:hover {
-  border-color: var(--accent-color);
+  border-color: var(--color-primary);
 }
 
 .service-details .services-img {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  width: 60%; 
+  height: auto; 
 }
 
 .service-details h3 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
+  color: var(--color-secondary);
 }
 
 .service-details h4 {
   font-size: 20px;
   font-weight: 700;
+  color: var(--color-secondary);
 }
 
 .service-details p {
@@ -1641,7 +1643,7 @@ section,
 .service-details ul i {
   font-size: 20px;
   margin-right: 8px;
-  color: var(--accent-color);
+  color: var(--color-primary);
 }
 .services-container {
   display: grid;
