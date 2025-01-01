@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +6,8 @@ body {
     background-color: #f4f4f4;
   }
   
+  /* Form Container */
+  .signup-container,
   .login-container {
     width: 100%;
     max-width: 400px;
@@ -57,6 +60,12 @@ body {
   
   .error-message {
     color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .success-message {
+    color: green;
     text-align: center;
     margin-top: 10px;
   }

@@ -92,13 +92,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /**
-   * Login State
+   * Login/Logout Button
    */
   const loginLink = document.querySelector('#login-link');
-  const isLoggedIn = localStorage.getItem('userLoggedIn');
+  const isLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+  const username = localStorage.getItem('username');
+
   if (loginLink) {
-    loginLink.textContent = isLoggedIn ? 'Logout' : 'Login';
-    loginLink.href = isLoggedIn ? 'logout.html' : 'login.html';
+    if (isLoggedIn) {
+      loginLink.textContent = `Logout (${username})`;
+      loginLink.href = '#';
+
+      // Add logout functionality
+      loginLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        localStorage.removeItem('userLoggedIn');
+        localStorage.removeItem('username');
+        alert('You have been logged out.');
+        window.location.href = 'index.html'; // Redirect to the main page
+      });
+    } else {
+      loginLink.textContent = 'Login';
+      loginLink.href = 'login.html'; // Redirect to the login page
+    }
   }
 
   /**
