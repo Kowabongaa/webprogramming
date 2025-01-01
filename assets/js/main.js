@@ -142,3 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 });
+
+const isLoggedIn = localStorage.getItem('userLoggedIn'); 
+const loginLink = document.getElementById('login-link');
+
+if (isLoggedIn) {
+    loginLink.textContent = 'Logout';
+    loginLink.href = 'logout.html';
+} else {
+    loginLink.textContent = 'Login';
+    loginLink.href = 'login.html';
+}

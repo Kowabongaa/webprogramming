@@ -1852,3 +1852,17 @@ section,
 }
 
 }
+
+.login-button {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+  color: white;
+}
