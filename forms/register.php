@@ -1,33 +1,39 @@
 <?php
-require 'config.php';
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "webprogramming";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['username']);
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    if (!empty($username) && !empty($email) && !empty($password)) {
-        // Hash the password
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
-        // Insert user into the database
-        $stmt = $pdo->prepare('INSERT INTO users (username, email, password) VALUES (:username, :email, :password)');
-        try {
-            $stmt->execute([
-                'username' => $username,
-                'email' => $email,
-                'password' => $hashedPassword,
-            ]);
-            echo "Registration successful!";
-        } catch (PDOException $e) {
-            if ($e->getCode() == 23000) { // Duplicate entry error code
-                echo "Username or email already exists!";
-            } else {
-                echo "Error: " . $e->getMessage();
-            }
-        }
+// Handling registration
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $regUsername = $_POST['username'];
+    $regPassword = $_POST['password'];
+
+    // Check if the username already exists
+    $checkQuery = "SELECT * FROM users WHERE username='$regUsername'";
+    $checkResult = mysqli_query($conn, $checkQuery);
+
+    if (mysqli_num_rows($checkResult) > 0) {
+        echo "Username already exists.";
     } else {
-        echo "Please fill in all fields.";
+        // Insert the new user into the database
+        $insertQuery = "INSERT INTO users (username, password) VALUES ('$regUsername', '$regPassword')";
+        $insertResult = mysqli_query($conn, $insertQuery);
+
+        if ($insertResult) {
+            echo "Registration successful!";
+        } else {
+            echo "Error: " . $insertQuery . "<br>" . mysqli_error($conn);
+        }
     }
 }
+
+mysqli_close($conn);
 ?>
